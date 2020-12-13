@@ -1,0 +1,1085 @@
+# 服务协议定义文件
+
+# 协议命名空间
+namespace: com.mnyun.news
+# 引用协议文件
+imports: 
+
+
+# 服务协议基础数据类型
+basic: 	
+	- void	
+	- str	
+	- bl	
+	- i8	
+	- i16	
+	- i32	
+	- i64	
+	- idl	
+	- list	
+	- set	
+	- map	
+	- struct	
+	- exception
+# 数据类型别名定义节点
+typeDefs: 
+	boolean: bl
+	short: i16
+	int: i32
+	long: i64
+	String: str
+
+# 数据类型定义节点
+types: 
+	# 定义数据结构PolicyRows
+	PolicyRows: 	
+		type: struct
+		summary: 农业政策列表-数据
+		fields: 
+			# 定义字段id
+			id:
+				id: 1
+				type: int
+				summary: 政策id
+			
+			# 定义字段title
+			title:
+				id: 2
+				type: String
+				summary: 标题
+			
+			# 定义字段release_date
+			release_date:
+				id: 3
+				type: long
+				summary: 发布日期
+			
+			# 定义字段summary
+			summary:
+				id: 4
+				type: String
+				summary: 摘要
+			
+	# 定义数据结构MnyNewsDetail
+	MnyNewsDetail: 	
+		type: struct
+		summary: 新闻详情
+		fields: 
+			# 定义字段id
+			id:
+				id: 1
+				type: int
+				summary: 新闻id
+			
+			# 定义字段title_thum
+			title_thum:
+				id: 2
+				type: String
+				summary: 标题图片
+			
+			# 定义字段title
+			title:
+				id: 3
+				type: String
+				summary: 标题
+			
+			# 定义字段author
+			author:
+				id: 4
+				type: String
+				summary: 作者
+			
+			# 定义字段source
+			source:
+				id: 5
+				type: String
+				summary: 来源
+			
+			# 定义字段type
+			type:
+				id: 6
+				type: int
+				summary: 类型
+			
+			# 定义字段type_name
+			type_name:
+				id: 7
+				type: String
+				summary: 类型名称
+			
+			# 定义字段content
+			content:
+				id: 8
+				type: String
+				summary: 内容
+			
+			# 定义字段release_date
+			release_date:
+				id: 8
+				type: long
+				summary: 发布日期
+			
+	# 定义数据结构MnyPolicyInterpret
+	MnyPolicyInterpret: 	
+		type: struct
+		summary: 农业政策表
+		fields: 
+			# 定义字段poi_policy_id
+			poi_policy_id:
+				id: 1
+				type: int
+				summary: 政策id
+			
+			# 定义字段poi_user_id
+			poi_user_id:
+				id: 2
+				type: int
+				summary: 收集人id，后台用户id
+			
+			# 定义字段poi_user_name
+			poi_user_name:
+				id: 3
+				type: int
+				summary: 后台用户名（冗余）
+			
+			# 定义字段poi_cr_date
+			poi_cr_date:
+				id: 4
+				type: long
+				summary: 收集日期
+			
+			# 定义字段poi_title
+			poi_title:
+				id: 5
+				type: String
+				summary: 政策标题
+			
+			# 定义字段poi_source
+			poi_source:
+				id: 6
+				type: String
+				summary: 政策来源
+			
+			# 定义字段poi_summary
+			poi_summary:
+				id: 7
+				type: String
+				summary: 摘要
+			
+			# 定义字段poi_content
+			poi_content:
+				id: 8
+				type: String
+				summary: 正文
+			
+			# 定义字段poi_praise_count
+			poi_praise_count:
+				id: 9
+				type: int
+				summary: 点赞数
+			
+			# 定义字段poi_visit_count
+			poi_visit_count:
+				id: 10
+				type: int
+				summary: 点击数
+			
+			# 定义字段poi_file_count
+			poi_file_count:
+				id: 11
+				type: int
+				summary: 附件数
+			
+			# 定义字段poi_order
+			poi_order:
+				id: 12
+				type: int
+				summary: 排序
+			
+			# 定义字段poi_is_reco
+			poi_is_reco:
+				id: 13
+				type: int
+				summary: 是否推荐，0：否，1：是
+			
+			# 定义字段poi_audit_status
+			poi_audit_status:
+				id: 14
+				type: int
+				summary: 审核状态，0：未审核，1：审核失败，2：审核成功
+			
+			# 定义字段poi_audit_id
+			poi_audit_id:
+				id: 15
+				type: int
+				summary: 后台审核人id
+			
+			# 定义字段poi_audit_date
+			poi_audit_date:
+				id: 16
+				type: long
+				summary: 审核日期
+			
+			# 定义字段poi_audit_name
+			poi_audit_name:
+				id: 17
+				type: String
+				summary: 审核人名称（冗余）
+			
+			# 定义字段poi_audit_summary
+			poi_audit_summary:
+				id: 18
+				type: String
+				summary: 审核说明
+			
+			# 定义字段poi_interpretation
+			poi_interpretation:
+				id: 19
+				type: String
+				summary: 政策解读
+			
+	# 定义数据结构NewRows
+	NewRows: 	
+		type: struct
+		summary: 新闻列表
+		fields: 
+			# 定义字段id
+			id:
+				id: 1
+				type: int
+				summary: 新闻id
+			
+			# 定义字段title_thum
+			title_thum:
+				id: 2
+				type: String
+				summary: 标题图片
+			
+			# 定义字段title
+			title:
+				id: 3
+				type: String
+				summary: 标题
+			
+			# 定义字段release_date
+			release_date:
+				id: 4
+				type: long
+				summary: 发布日期
+			
+			# 定义字段summary
+			summary:
+				id: 5
+				type: String
+				summary: 摘要
+			
+	# 定义数据结构MnyPolicyFiles
+	MnyPolicyFiles: 	
+		type: struct
+		summary: 农业政策附件表
+		fields: 
+			# 定义字段pof_file_id
+			pof_file_id:
+				id: 1
+				type: int
+				summary: 文件id
+			
+			# 定义字段pof_poliicy_id
+			pof_poliicy_id:
+				id: 2
+				type: int
+				summary: 政策id
+			
+			# 定义字段pof_date
+			pof_date:
+				id: 3
+				type: long
+				summary: 上传文件日期
+			
+			# 定义字段pof_title
+			pof_title:
+				id: 4
+				type: String
+				summary: 附件标题
+			
+			# 定义字段pof_url
+			pof_url:
+				id: 5
+				type: String
+				summary: 文件路径
+			
+			# 定义字段pof_ftype
+			pof_ftype:
+				id: 6
+				type: String
+				summary: 文件类型
+			
+			# 定义字段pof_size
+			pof_size:
+				id: 7
+				type: long
+				summary: 文件大小
+			
+			# 定义字段pof_user_id
+			pof_user_id:
+				id: 8
+				type: int
+				summary: 上传人id，后台用户id
+			
+			# 定义字段pof_user_name
+			pof_user_name:
+				id: 9
+				type: String
+				summary: 上传人名称（冗余）
+			
+	# 定义数据结构MnyHelpDocs
+	MnyHelpDocs: 	
+		type: struct
+		summary: 平台帮助文档
+		fields: 
+			# 定义字段hpd_doc_id
+			hpd_doc_id:
+				id: 1
+				type: int
+				summary: 文档id
+			
+			# 定义字段hpd_platform
+			hpd_platform:
+				id: 2
+				type: int
+				summary: 用户平台类型，0：PC端，1：移动端，2：小程序端
+			
+			# 定义字段hpd_class
+			hpd_class:
+				id: 3
+				type: String
+				summary: 帮助分类
+			
+			# 定义字段hpd_title
+			hpd_title:
+				id: 4
+				type: String
+				summary: 标题
+			
+			# 定义字段hpd_content
+			hpd_content:
+				id: 5
+				type: String
+				summary: 正文
+			
+			# 定义字段hpd_cr_date
+			hpd_cr_date:
+				id: 6
+				type: long
+				summary: 创建日期
+			
+			# 定义字段hpd_user_id
+			hpd_user_id:
+				id: 7
+				type: int
+				summary: 创建修改人id
+			
+			# 定义字段hpd_user_name
+			hpd_user_name:
+				id: 8
+				type: String
+				summary: 创建修改人名称（冗余）
+			
+			# 定义字段hpd_ver_code
+			hpd_ver_code:
+				id: 9
+				type: int
+				summary: 文档版本
+			
+			# 定义字段hpd_release
+			hpd_release:
+				id: 10
+				type: int
+				summary: 是否发布，0：不发布，1：发布
+			
+	# 定义数据结构HelpDocList
+	HelpDocList: 	
+		type: struct
+		summary: 平台帮助文档列表
+		fields: 
+			# 定义字段pageIndex
+			pageIndex:
+				id: 1
+				type: int
+				summary: 页码
+			
+			# 定义字段count
+			count:
+				id: 2
+				type: int
+				summary: 总数
+			
+			# 定义字段pageCount
+			pageCount:
+				id: 3
+				type: int
+				summary: 页码容量
+			
+			# 定义字段rows
+			rows:
+				id: 4
+				type: list<MnyHelpDocs>
+				summary: 新闻列表
+			
+	# 定义数据结构Enclosure
+	Enclosure: 	
+		type: struct
+		summary: 附件
+		fields: 
+			# 定义字段enclosureName
+			enclosureName:
+				id: 1
+				type: String
+				summary: 附件名称
+			
+			# 定义字段url
+			url:
+				id: 2
+				type: String
+				summary: 附件下载路径
+			
+	# 定义数据结构NewsList
+	NewsList: 	
+		type: struct
+		summary: 新闻列表
+		fields: 
+			# 定义字段pageIndex
+			pageIndex:
+				id: 1
+				type: int
+				summary: 页码
+			
+			# 定义字段count
+			count:
+				id: 2
+				type: int
+				summary: 总数
+			
+			# 定义字段pageCount
+			pageCount:
+				id: 3
+				type: int
+				summary: 页码容量
+			
+			# 定义字段rows
+			rows:
+				id: 4
+				type: list<NewRows>
+				summary: 新闻列表
+			
+	# 定义数据结构MnyNewsClassify
+	MnyNewsClassify: 	
+		type: struct
+		summary: 新闻分类
+		fields: 
+			# 定义字段ncl_class_id
+			ncl_class_id:
+				id: 1
+				type: int
+				summary: 分类id
+			
+			# 定义字段ncl_parent_id
+			ncl_parent_id:
+				id: 2
+				type: int
+				summary: 分类id
+			
+			# 定义字段ncl_name
+			ncl_name:
+				id: 3
+				type: String
+				summary: 分类名称
+			
+			# 定义字段ncl_level
+			ncl_level:
+				id: 4
+				type: int
+				summary: 当前级数
+			
+			# 定义字段ncl_child_count
+			ncl_child_count:
+				id: 5
+				type: int
+				summary: 子类数
+			
+			# 定义字段ncl_parent_ids
+			ncl_parent_ids:
+				id: 6
+				type: String
+				summary: 父类列表，以逗号分隔
+			
+			# 定义字段ncl_path
+			ncl_path:
+				id: 7
+				type: String
+				summary: 父类路径
+			
+			# 定义字段childen
+			childen:
+				id: 8
+				type: list<MnyNewsClassify>
+				summary: 子类
+			
+	# 定义数据结构PolicyDetail
+	PolicyDetail: 	
+		type: struct
+		summary: 农业政策详情
+		fields: 
+			# 定义字段id
+			id:
+				id: 1
+				type: int
+				summary: 政策id
+			
+			# 定义字段title
+			title:
+				id: 2
+				type: String
+				summary: 标题
+			
+			# 定义字段source
+			source:
+				id: 3
+				type: String
+				summary: 来源
+			
+			# 定义字段type
+			type:
+				id: 4
+				type: int
+				summary: 新闻资讯政策分类：1.资讯,2.政策
+			
+			# 定义字段type_name
+			type_name:
+				id: 5
+				type: String
+				summary: 新闻资讯政策分类名称
+			
+			# 定义字段release_date
+			release_date:
+				id: 6
+				type: long
+				summary: 发布日期
+			
+			# 定义字段content
+			content:
+				id: 7
+				type: String
+				summary: 正文
+			
+			# 定义字段enclosure
+			enclosure:
+				id: 8
+				type: list<Enclosure>
+				summary: 附件
+			
+	# 定义数据结构PolicyInterpretList
+	PolicyInterpretList: 	
+		type: struct
+		summary: 农业政策列表
+		fields: 
+			# 定义字段pageIndex
+			pageIndex:
+				id: 1
+				type: int
+				summary: 页码
+			
+			# 定义字段count
+			count:
+				id: 2
+				type: int
+				summary: 总数
+			
+			# 定义字段pageCount
+			pageCount:
+				id: 3
+				type: int
+				summary: 页码容量
+			
+			# 定义字段rows
+			rows:
+				id: 4
+				type: list<PolicyRows>
+				summary: 新闻列表
+			
+
+# 服务接口定义节点
+interfaces:
+	# 服务mnews_svc定义开始
+	mnews_svc: 	
+		# 定义接口方法addNewsClassify开始
+		addNewsClassify: 		
+			summary: 添加新闻分类(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyNewsClassify
+				MnyNewsClassify:
+					id: 2
+					type: MnyNewsClassify
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getMnyHelpDocs开始
+		getMnyHelpDocs: 		
+			summary: 查看平台帮助文档(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段hpd_doc_id
+				hpd_doc_id:
+					id: 1
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: MnyHelpDocs
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法modifyPolicyInterpret开始
+		modifyPolicyInterpret: 		
+			summary: 修改农业政策(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段mnyPolicyInterpret
+				mnyPolicyInterpret:
+					id: 2
+					type: MnyPolicyInterpret
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法addMnyPolicyFiles开始
+		addMnyPolicyFiles: 		
+			summary: 添加农业政策附件(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段files
+				files:
+					id: 2
+					type: MnyPolicyFiles
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法addNews开始
+		addNews: 		
+			summary: 添加新闻(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyNews
+				MnyNews:
+					id: 2
+					type: struct
+				
+			
+			# 接口返回数据类型
+			results: NewsList
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getPolicyInterpretList开始
+		getPolicyInterpretList: 		
+			summary: 获取农业政策列表(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段p
+				p:
+					id: 1
+					type: int
+				
+				# 定义字段r
+				r:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: PolicyInterpretList
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法modifyNews开始
+		modifyNews: 		
+			summary: 修改新闻(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyNews
+				MnyNews:
+					id: 2
+					type: struct
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getPolicyDetail开始
+		getPolicyDetail: 		
+			summary: 农业政策详情(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段poi_policy_id
+				poi_policy_id:
+					id: 1
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: PolicyDetail
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getNewsDetail开始
+		getNewsDetail: 		
+			summary: 获取新闻详情(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段ns_new_id
+				ns_new_id:
+					id: 1
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: MnyNewsDetail
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法examineNews开始
+		examineNews: 		
+			summary: 审核新闻(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyNews
+				MnyNews:
+					id: 2
+					type: struct
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法delHelpDocs开始
+		delHelpDocs: 		
+			summary: 删除平台帮助文档(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段hpd_doc_id
+				hpd_doc_id:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getHelpDocList开始
+		getHelpDocList: 		
+			summary: 平台帮助文档列表(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段p
+				p:
+					id: 1
+					type: int
+				
+				# 定义字段r
+				r:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: HelpDocList
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法modiftHelpDocs开始
+		modiftHelpDocs: 		
+			summary: 修改平台帮助文档(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyHelpDocs
+				MnyHelpDocs:
+					id: 2
+					type: MnyHelpDocs
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法gewNewsClassifyList开始
+		gewNewsClassifyList: 		
+			summary: 删除新闻分类(后台)			
+			# 接口输入参数
+			args: 			
+			
+			# 接口返回数据类型
+			results: list<MnyNewsClassify>
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法addMnyHelpDocs开始
+		addMnyHelpDocs: 		
+			summary: 添加平台帮助文档(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyHelpDocs
+				MnyHelpDocs:
+					id: 2
+					type: MnyHelpDocs
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法examinePolicy开始
+		examinePolicy: 		
+			summary: 农业政策审核(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段mnyPolicyInterpret
+				mnyPolicyInterpret:
+					id: 2
+					type: MnyPolicyInterpret
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法modifyNewsClassify开始
+		modifyNewsClassify: 		
+			summary: 修改新闻分类			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段ncl_class_id
+				ncl_class_id:
+					id: 2
+					type: int
+				
+				# 定义字段ncl_parent_id
+				ncl_parent_id:
+					id: 3
+					type: int
+				
+				# 定义字段ncl_name
+				ncl_name:
+					id: 4
+					type: String
+				
+				# 定义字段ncl_level
+				ncl_level:
+					id: 5
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getNewsList开始
+		getNewsList: 		
+			summary: 获取新闻列表((后台))			
+			# 接口输入参数
+			args: 			
+				# 定义字段p
+				p:
+					id: 1
+					type: int
+				
+				# 定义字段r
+				r:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: NewsList
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法addPolicyInterpret开始
+		addPolicyInterpret: 		
+			summary: 添加农业政策(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段MnyPolicyInterpret
+				MnyPolicyInterpret:
+					id: 2
+					type: MnyPolicyInterpret
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法delMnyPolicyFiles开始
+		delMnyPolicyFiles: 		
+			summary: 删除农业附件(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段pof_file_id
+				pof_file_id:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法delNewsClassify开始
+		delNewsClassify: 		
+			summary: 删除新闻分类(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段ncl_class_id
+				ncl_class_id:
+					id: 1
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法delPolicyInterpret开始
+		delPolicyInterpret: 		
+			summary: 删除农业政策(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段poi_policy_id
+				poi_policy_id:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法getMnyPolicyFileList开始
+		getMnyPolicyFileList: 		
+			summary: 获取农业政策附件列表(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段p
+				p:
+					id: 1
+					type: int
+				
+				# 定义字段r
+				r:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: list<MnyPolicyFiles>
+			# 接口可能抛出异常类型
+			throw: void
+		# 定义接口方法delNewsByNsNewId开始
+		delNewsByNsNewId: 		
+			summary: 删除新闻(后台)			
+			# 接口输入参数
+			args: 			
+				# 定义字段token
+				token:
+					id: 1
+					type: String
+				
+				# 定义字段ns_new_id
+				ns_new_id:
+					id: 2
+					type: int
+				
+			
+			# 接口返回数据类型
+			results: boolean
+			# 接口可能抛出异常类型
+			throw: void
+	# 服务定义节点结束
